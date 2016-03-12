@@ -1,0 +1,5 @@
+<phpunit bootstrap="src/Ary.php">
+    <testsuite name="ContainerTest">
+        <directory>./test/</directory>
+    </testsuite>
+</phpunit>
