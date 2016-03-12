@@ -74,12 +74,12 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         }
     }
 
-    public function test_array_Method(){
+    public function test_arr_Method(){
         $sample = $this->sample;
         unset($sample['object']);
         $container = new \Kijtra\Container($sample);
-        $this->assertSame($sample, $container->array());
-        $this->assertSame($sample['array'], $container->array->array());
+        $this->assertSame($sample, $container->arr());
+        $this->assertSame($sample['array'], $container->array->arr());
     }
 
     public function test_count_Method(){
@@ -111,8 +111,8 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         $container2[] = 'value0';
         $container2[] = 'value1';
 
-        $this->assertSame($sample, $container1->array());
-        $this->assertSame($sample, $container2->array());
+        $this->assertSame($sample, $container1->arr());
+        $this->assertSame($sample, $container2->arr());
     }
 
     public function testToString(){
@@ -132,7 +132,7 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         $container[(object)array()] = 'invalid';
         $container[array()] = 'invalid';
         $container['valid'] = 'valid';
-        $this->assertSame($sample, $container->array());
+        $this->assertSame($sample, $container->arr());
     }
 
     public function testCheckStorageStacked(){

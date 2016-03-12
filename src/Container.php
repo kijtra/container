@@ -43,7 +43,7 @@ class Container implements \IteratorAggregate, \ArrayAccess, \Countable
         return $this->__isset($name);
     }
 
-    public function array()
+    public function arr()
     {
         return $this->toArray($this);
     }
