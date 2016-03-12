@@ -1,7 +1,4 @@
 <?php
-require_once dirname(__DIR__).'/vendor/autoload.php';
-require_once dirname(__DIR__).'/src/Container.php';
-
 class ContainerTest  extends PHPUnit_Framework_TestCase{
     public function setUp()
     {
