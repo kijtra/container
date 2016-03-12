@@ -74,7 +74,11 @@ class Container implements \IteratorAggregate, \ArrayAccess, \Countable
             $this->{self::$counter[$hash]} = $value;
             self::$counter[$hash]++;
         } elseif ($this->isValidName($name)) {
-            $this->$name = $value;
+            if (is_array($value) || $value instanceof \stdClass) {
+                $this->$name = $this->setObject($name, $value);
+            } else {
+                $this->$name = $value;
+            }
         }
     }
 
