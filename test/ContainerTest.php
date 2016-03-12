@@ -34,15 +34,13 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
 
     public function testSetGetValue(){
         $container = new \Kijtra\Container;
-        $target = $this->sample['object'];
+        $target = $this->sample['array'];
 
         $container->value1 = $target;
-        $this->assertSame($container->value1, $target);
+        $this->assertSame($container->value1->arr(), $target);
 
         $container['value2'] = $target;
-        $this->assertSame($container['value2'], $target);
-
-        $this->assertSame($container->value1, $container['value2']);
+        $this->assertSame($container['value2']->arr(), $target);
     }
 
     public function testSetGetValueHirarchical(){

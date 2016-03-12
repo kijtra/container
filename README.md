@@ -2,7 +2,7 @@
 Simple php data container.  
 No dependencies only one file.  
 
-![Build Statuc](https://travis-ci.org/kijtra/container.svg?branch=master)
+[![Build Status](https://travis-ci.org/kijtra/container.svg?branch=master)](https://travis-ci.org/kijtra/container)
 
 ## Usage
 
