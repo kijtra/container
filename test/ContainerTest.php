@@ -139,7 +139,7 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         // Get Method count in current class
         $current = new ReflectionClass(__CLASS__);
         $count = 0;
-        foreach ((new ReflectionClass(__CLASS__))->getMethods() as $val) {
+        foreach ($current->getMethods() as $val) {
             if ($val->class == __CLASS__) {
                 $count++;
             }
