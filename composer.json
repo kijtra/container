@@ -1,0 +1,22 @@
+{
+    "name": "kijtra/container",
+    "description": "Simple php data container",
+    "keywords": ["data", "container", "array", "object"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kijtra",
+            "email": "kijtra@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {"Kijtra\\": "src/"}
+    }
+}
