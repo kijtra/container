@@ -155,7 +155,7 @@ $parent = $container->key3->parent(); // Fatal
 ## Installation
 
 kijtra/container is only one file.  
-[Download source file](blob/master/src/Container.php) and include it.
+[Download source file](https://github.com/kijtra/container/blob/master/src/Container.php) and include it.
 
 ```php
 include('/path/to/Container.php');
