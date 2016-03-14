@@ -54,6 +54,18 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         $this->assertSame($container['array']['value2'], $target);
     }
 
+    public function test_get_Method(){
+        $container = new \Kijtra\Container($this->sample);
+        $this->assertSame($this->sample['integer'], $container->integer);
+    }
+
+    public function test_has_Method(){
+        $container = new \Kijtra\Container($this->sample);
+        foreach($this->sample as $key => $val) {
+            $this->assertTrue($container->has($key));
+        }
+    }
+
     public function test_name_Method(){
         $container = new \Kijtra\Container($this->sample);
         $this->assertSame('value1', $container->array->value1->name());
@@ -63,13 +75,6 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
     public function test_parent_Method(){
         $container = new \Kijtra\Container($this->sample);
         $this->assertSame($container->array, $container->array->value1->parent());
-    }
-
-    public function test_has_Method(){
-        $container = new \Kijtra\Container($this->sample);
-        foreach($this->sample as $key => $val) {
-            $this->assertTrue($container->has($key));
-        }
     }
 
     public function test_arr_Method(){

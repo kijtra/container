@@ -28,6 +28,16 @@ class Container implements \IteratorAggregate, \ArrayAccess, \Countable
         }
     }
 
+    public function get($name)
+    {
+        return $this->__get($name);
+    }
+
+    public function has($name)
+    {
+        return $this->__isset($name);
+    }
+
     public function name()
     {
         return self::$names[self::$storage->getHash($this)];
@@ -36,11 +46,6 @@ class Container implements \IteratorAggregate, \ArrayAccess, \Countable
     public function parent()
     {
         return self::$storage->offsetGet($this);
-    }
-
-    public function has($name)
-    {
-        return $this->__isset($name);
     }
 
     public function arr()
