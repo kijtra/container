@@ -58,6 +58,27 @@ class Container implements \IteratorAggregate, \ArrayAccess, \Countable
         return count(get_object_vars($this));
     }
 
+    public function keys()
+    {
+        $vars = get_object_vars($this);
+        if (!empty($vars)) {
+            $data = array();
+            foreach(get_object_vars($this) as $key => $val) {
+                $data[$key] = $val;
+            }
+
+            return array_keys($data);
+        }
+    }
+
+    public function values()
+    {
+        $vars = get_object_vars($this);
+        if (!empty($vars)) {
+            return array_values(get_object_vars($this));
+        }
+    }
+
     public function storage()
     {
         return self::$storage;

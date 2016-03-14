@@ -90,6 +90,16 @@ class ContainerTest  extends PHPUnit_Framework_TestCase{
         $this->assertSame(count($this->sample), $container->count());
     }
 
+    public function test_keys_Method(){
+        $container = new \Kijtra\Container($this->sample);
+        $this->assertSame(array_keys($this->sample['array']), $container->array->keys());
+    }
+
+    public function test_values_Method(){
+        $container = new \Kijtra\Container($this->sample);
+        $this->assertSame(array_values($this->sample['array']), $container->array->values());
+    }
+
     public function testIsSet(){
         $container = new \Kijtra\Container($this->sample);
         $this->assertTrue(isset($container->array));
